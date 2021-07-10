@@ -4,7 +4,8 @@ from conect import *
  
 PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.connect(("localhost",PORT))
+server.bind(('127.0.0.1',PORT))
+server.listen(1000)
 server.send(bytes('00010sinitagusr','utf-8'))
 
 def recibir(sock, addr):
