@@ -19,8 +19,9 @@ def consultar(sqlquery):
 
 def modificar(sqlquery):
     cur.execute(sqlquery) 
-    conec.commit()  
-
+    conec.commit()
+    cerrar() 
+    
 def cerrar():
     try:
         cur.close()
