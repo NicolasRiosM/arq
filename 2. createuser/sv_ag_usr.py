@@ -5,7 +5,7 @@ from conect import *
 PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect(("localhost",PORT))
-
+server.send(bytes('00010sinitagusr','utf-8'))
 
 #def recibir(sock, addr):
 print("Creando un nuevo usuario")
@@ -35,4 +35,3 @@ while True:
 	sock, addr = server.accept()
 	tarea = threading.Thread(target = recibir, args = (sock, addr))
 	tarea.start()'''
-nico@mail.clhola
