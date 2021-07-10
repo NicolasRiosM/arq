@@ -42,7 +42,7 @@ while True:
     if(opcion == '1'):
         print("Ha seleccionado la opcion de inicio de sesión\n")
         #mandar a codigo maca
-        s.send(bytes('00010getsvlogin','utf-8'))
+        socket.send(bytes('00010getsvlogin','utf-8'))
         #ingreso de dato
 
         email = input("Ingrese su email \n")
@@ -59,7 +59,7 @@ while True:
 
         
     if(opcion == '2'):
-        s.send(bytes('00010getsvagusr','utf-8'))
+        socket.send(bytes('00010getsvagusr','utf-8'))
         print("Para crear su cuenta de usuario, ingrese sus datos a continuación.")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
@@ -96,7 +96,7 @@ while True:
 	        \n""")
 
     if opcion=="1":
-        s.send(bytes('00010getsvcread','utf-8'))
+        socket.send(bytes('00010getsvcread','utf-8'))
         email1 = email
         email2 = email1 + " "
         temp2= llenado(len(email2+'cread'))
@@ -146,7 +146,7 @@ while True:
         
     
     if opcion=="2":
-        s.send(bytes('00010getsveditd','utf-8'))
+        socket.send(bytes('00010getsveditd','utf-8'))
         email1 = email
 
                 # se debe estar con sesión iniciada de entes , luego mover esto al if de op 1
@@ -194,7 +194,7 @@ while True:
 
         
     if opcion=="3":
-        s.send(bytes('00010getsvelimd','utf-8'))
+        socket.send(bytes('00010getsvelimd','utf-8'))
         email1 = email
 
                 # se debe estar con sesión iniciada de entes , luego mover esto al if de op 1
@@ -233,7 +233,7 @@ while True:
             
         
     if opcion== "4":
-        s.send(bytes('00010getsvviewd','utf-8'))
+        socket.send(bytes('00010getsvviewd','utf-8'))
         consulta = f"SELECT mascota.nombre, mascota.edad, mascota.raza, mascota.descripcion, usuario.nombre, usuario.apellido, usuario.contacto, usuario.email, usuario.region FROM mascota, usuario, usuariomascota WHERE mascota.idmascota = usuariomascota.idmascota AND usuario.idusuario = usuariomascota.idusuario;"
         respuesta = consultar(consulta)
                 #print(respuesta)
@@ -259,7 +259,7 @@ while True:
 
             
     if opcion== "5":
-        s.send(bytes('00010getsveditu','utf-8'))
+        socket.send(bytes('00010getsveditu','utf-8'))
         email1 = email # aqui pasas el atributo de mail
         print("Sus datos de usuario: ")
         consulta = f"SELECT nombre, apellido, rut, email, pass, contacto, region, tipodeusuario, idusuario FROM usuario WHERE email='{email1}';"
@@ -305,7 +305,7 @@ while True:
         recibido = socket.recv(4096)
         print(recibido[10:])
     if opcion=="6":
-        s.send(bytes('00010getsvdeltu','utf-8'))
+        socket.send(bytes('00010getsvdeltu','utf-8'))
         email = email
                 # seleccionar tipo de usuario del usuario loggeado
         consulta0 = f"SELECT tipodeusuario FROM usuario where email='{email}';"
