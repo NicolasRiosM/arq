@@ -6,11 +6,12 @@ PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect(("localhost",PORT))
 server.send(bytes('00010sinitagusr','utf-8'))
-
+while True:
+	sock, addr = server.accept()
 #def recibir(sock, addr):
 print("Creando un nuevo usuario")
 while True:
-    datos = server.recv(4096)
+    datos = sock.recv(4096)
     if datos.decode('utf-8').find('agusr'):
         #decodificar el mensaje
         datos = datos[10:]
@@ -31,7 +32,6 @@ while True:
     print("Usuario registrado")
     
     server.close()
-while True:
-	sock, addr = server.accept()
-	'''tarea = threading.Thread(target = recibir, args = (sock, addr))
+
+'''tarea = threading.Thread(target = recibir, args = (sock, addr))
 	tarea.start()'''
