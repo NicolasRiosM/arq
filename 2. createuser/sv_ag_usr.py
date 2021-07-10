@@ -31,7 +31,7 @@ while True:
     print("Usuario registrado")
     
     server.close()
-'''while True:
+while True:
 	sock, addr = server.accept()
-	tarea = threading.Thread(target = recibir, args = (sock, addr))
+	'''tarea = threading.Thread(target = recibir, args = (sock, addr))
 	tarea.start()'''
