@@ -32,7 +32,9 @@ def recibir(sock, addr):
         print("Usuario registrado")
         
         server.close()
-while True:
+'''while True:
 	#sock, addr = server.accept()
-	tarea = threading.Thread(target = recibir, args = ('localhost', 5000))
-	tarea.start()
+    
+	tarea = threading.Thread(target = recibir, args = ('127.0.0.1', 5000))
+	tarea.start()'''
+recibir(server,PORT)
