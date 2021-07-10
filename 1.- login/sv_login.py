@@ -11,7 +11,7 @@ recibido=s.recv(4096)
 def recibir(sock, addr):
     print("Ingresando a la cuenta de usuario")
     while True:
-        datos = s.recv(4096)
+        datos = sock.recv(4096)
         if datos.decode('utf-8').find('login'):
             datos = datos[10:]
             target = datos.decode()
