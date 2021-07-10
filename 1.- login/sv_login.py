@@ -9,7 +9,7 @@ s.connect(("localhost", 5000))
 s.send(bytes('00010sinitlogin','utf-8'))
 recibido=s.recv(4096)
 print(recibido)
-
+val=0
 print("Ingresando a la cuenta de usuario")
 while True:
     datos = s.recv(4096)
@@ -46,7 +46,7 @@ while True:
 #-------------------------VALIDANDO--------------------------#
             enchash = password.encode()
             encpass = data[1].encode()
-            val=0
+            
             if data[0] == email and bcrypt.checkpw(encpass, enchash):
                 val=1
                 print("Ha ingresado con éxito a su cuenta")
