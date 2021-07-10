@@ -8,7 +8,7 @@ import threading
 global email
 socket = socket.socket()
 PORT = 5000
-socket.connect(("127.0.0.1",PORT))
+socket.connect(("localhost",PORT))
 socket.send(bytes('00005getsv','utf-8'))
 def limpiar(var):
     var = str(var)
