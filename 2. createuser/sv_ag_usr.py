@@ -25,9 +25,9 @@ while True:
     else:
         menj = "No fue posible añadir el usuario"
     
-    menj='supfu'+str(menj)
+    menj='agusr'+str(menj)
     temp=llenado(len(menj))  
-    sock.send(bytes(temp+menj,'utf-8'))
+    server.send(bytes(temp+menj,'utf-8'))
     print("Usuario registrado")
     
     server.close()
@@ -35,3 +35,4 @@ while True:
 	sock, addr = server.accept()
 	tarea = threading.Thread(target = recibir, args = (sock, addr))
 	tarea.start()'''
+nico@mail.clhola
