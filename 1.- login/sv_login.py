@@ -44,21 +44,21 @@ while True:
             psw.pop()
             password=''.join(psw)
 #-------------------------VALIDANDO--------------------------#
-        enchash = password.encode()
-        encpass = data[1].encode()
-        val=0
-        if data[0] == email and bcrypt.checkpw(encpass, enchash):
-            val=1
-            print("Ha ingresado con éxito a su cuenta")
-            dat="ok"
-            mens= dat + " "
-            aux=llenado(len(mens+'login'))
-            mensaje=aux+'login'+mens
-            socket.send(bytes(mensaje,'utf-8'))
-            break
+            enchash = password.encode()
+            encpass = data[1].encode()
+            val=0
+            if data[0] == email and bcrypt.checkpw(encpass, enchash):
+                val=1
+                print("Ha ingresado con éxito a su cuenta")
+                dat="ok"
+                mens= dat + " "
+                aux=llenado(len(mens+'login'))
+                mensaje=aux+'login'+mens
+                socket.send(bytes(mensaje,'utf-8'))
+                break
 #--------------------------------------------------------------#
-if (val!=1):
-    print("Contraseña incorrecta")
+    if (val!=1):
+        print("Contraseña incorrecta")
     
-s.close()
+    s.close()
 
