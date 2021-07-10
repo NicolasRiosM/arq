@@ -20,6 +20,7 @@ while True:
     respuesta = consultar(consulta)
 #--------------------------------------------------------------#
     i=0
+    print("hola")
     while (i<len(respuesta)):
         comp = respuesta [i][0]
         i=i+1
@@ -47,6 +48,11 @@ while True:
         if data[0] == email and bcrypt.checkpw(encpass, enchash):
             val=1
             print("Ha ingresado con éxito a su cuenta")
+            dat="ok"
+            mens= dat + " "
+            aux=llenado(len(mens+'login'))
+            mensaje=aux+'login'+mens
+            socket.send(bytes(mensaje,'utf-8'))
             break
 #--------------------------------------------------------------#
 if (val!=1):
