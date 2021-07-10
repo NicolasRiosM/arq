@@ -20,7 +20,7 @@ def consultar(sqlquery):
 def modificar(sqlquery):
     cur.execute(sqlquery) 
     conec.commit()
-    cerrar() 
+    
     
 def cerrar():
     try:
@@ -38,3 +38,4 @@ def llenado(largo):
     return aux
 
 conexion()
+cerrar() 
