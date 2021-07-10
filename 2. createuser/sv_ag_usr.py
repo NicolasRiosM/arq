@@ -7,7 +7,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect(("localhost",PORT))
 
 server.send(bytes('00010sinitagusr','utf-8'))
-
+recibido=server.recv(4096)
 def recibir(sock, addr):
     print("Creando un nuevo usuario")
     while True:
@@ -17,7 +17,7 @@ def recibir(sock, addr):
             datos = datos[10:]
             target = datos.decode()
             data = target.split()
-            
+        print(data)
         consulta = f"INSERT INTO usuario (nombre, apellido, rut, pass, contacto, region, email) VALUES ('{data[0]}','{data[1]}','{data[2]}','{data[3]}','{data[4]}','{data[5]}','{data[6]}');"
         respuesta = modificar(consulta)
         
@@ -37,4 +37,6 @@ def recibir(sock, addr):
     
 	tarea = threading.Thread(target = recibir, args = ('127.0.0.1', 5000))
 	tarea.start()'''
+#while True:
+#if server.recv(4096):
 recibir(server,PORT)
