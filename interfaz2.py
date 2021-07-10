@@ -55,7 +55,7 @@ while True:
         mensaje = aux + 'login' + datos
         
         socket.send(bytes(mensaje,'utf-8'))
-        if socket.recv(4096).find("ok"):
+        if socket.recv(4096).find('ok'):
                 print("Ha iniciado sesion con exito")
                 break
         else:
