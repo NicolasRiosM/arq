@@ -5,7 +5,7 @@ from conect import *
 PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect(("localhost",PORT))
-server.listen(1000)
+
 
 def recibir(sock, addr):
     print("Creando un nuevo usuario")
