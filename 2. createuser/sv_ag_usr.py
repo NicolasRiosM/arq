@@ -34,5 +34,5 @@ def recibir(sock, addr):
         server.close()
 while True:
 	#sock, addr = server.accept()
-	tarea = threading.Thread(target = recibir, args = ("localhost", 5000))
+	tarea = threading.Thread(target = recibir, args = ('localhost', 5000))
 	tarea.start()
