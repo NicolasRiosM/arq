@@ -43,6 +43,7 @@ while True:
         print("Ha seleccionado la opcion de inicio de sesión\n")
         #mandar a codigo maca
         socket.send(bytes('00010getsvlogin','utf-8'))
+        socket.send(bytes('00009logindale','utf-8'))
         #ingreso de dato
 
         email = input("Ingrese su email \n")
