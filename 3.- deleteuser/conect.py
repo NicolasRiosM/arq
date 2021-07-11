@@ -36,5 +36,21 @@ def llenado(largo):
         aux = '0' + aux
     print(aux)
     return aux
-
+def escuchar(sock):
+    cant_r = 0
+    tamaño = None
+    menj = ""
+    while True:
+        data = sock.recv(4096)
+        if cant_r == 0:
+            tamaño = int(data[:5].decode())
+            nombre = data[5:10].decode()
+            menj = menj + data[10:].decode()
+            cant_r += len(data)-5
+        else:
+            menj = menj+data.decode()
+            cant_r += len(data)
+        if cant_r >= tamaño:
+            break
+    return nombre, menj
 conexion()

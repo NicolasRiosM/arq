@@ -8,11 +8,11 @@ from conect import *
 
 PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('127.0.0.1',PORT))
+server.connect(('127.0.0.1',PORT))
 #server.send(bytes('00010siniteditu','utf8'))
 #recibido=s.recv(4096)
 #print(recibido)
-server.listen(1000)
+
 
 def recibir(sock, addr):
     print("Start edit_user")
