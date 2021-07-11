@@ -7,7 +7,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 s.connect(("localhost", 5000))
 s.send(bytes('00010sinitlogin','utf-8'))
-s.listen(1000)
+recibido=s.recv(4096)
+print(recibido)
 val=0
 print("Ingresando a la cuenta de usuario")
 while True:
