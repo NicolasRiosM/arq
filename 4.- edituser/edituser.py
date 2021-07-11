@@ -8,7 +8,7 @@ from conect import *
 
 PORT = 5000
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.connect(('127.0.0.1',PORT))
+server.connect(('192.0.0.1',PORT))
 #server.send(bytes('00010siniteditu','utf8'))
 #recibido=s.recv(4096)
 #print(recibido)
