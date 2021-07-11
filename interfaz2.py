@@ -56,7 +56,7 @@ while True:
         
         socket.send(bytes(mensaje,'utf-8'))
         recibido=socket.recv(4096)
-        if recibido.decode('utf-8').find('ok'):
+        if recibido.decode('utf-8').find('okay'):
                 print("Ha iniciado sesion con exito")
                 break
         else:
